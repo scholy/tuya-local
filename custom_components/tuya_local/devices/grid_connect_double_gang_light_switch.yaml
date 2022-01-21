@@ -1,5 +1,5 @@
 # Richard King
-# Auto-create switch and timer entities for Grid Connect Double Gang Light Switch 
+# Auto-create switch and timer entities for Grid Connect Double Gang Light Switch
 
 name: Grid Connnect Double Gang Light Switch
 primary_entity:
@@ -12,9 +12,10 @@ primary_entity:
       name: switch
       type: boolean
 secondary_entities:
-   - entity: switch
+  - entity: switch
     class: switch
     name: Light Switch 1
+    icon: "mdi:light-recessed"
     dps:
       - id: 1
         name: switch
@@ -34,6 +35,7 @@ secondary_entities:
   - entity: switch
     class: switch
     name: Light Switch 2
+    icon: "mdi:light-recessed"
     dps:
       - id: 2
         name: switch
