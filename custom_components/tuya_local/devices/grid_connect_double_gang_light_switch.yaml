@@ -13,8 +13,9 @@ primary_entity:
       type: boolean
 secondary_entities:
   - entity: switch
-    class: switch
+    category: config
     name: Light Switch 1
+    class: switch
     icon: "mdi:light-recessed"
     dps:
       - id: 1
@@ -33,8 +34,9 @@ secondary_entities:
         type: boolean
         hidden: true
   - entity: switch
-    class: switch
+    category: config
     name: Light Switch 2
+    class: switch
     icon: "mdi:light-recessed"
     dps:
       - id: 2
