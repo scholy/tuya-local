@@ -1,1 +1,76 @@
+# Richard King
+# Auto-create switch and timer entities for Grid Connect Double Gang Light Switch 
 
+name: Grid Connnect Double Gang Light Switch
+primary_entity:
+  entity: switch
+  category: config
+  name: Master
+  class: switch
+  dps:
+    - id: 105
+      name: switch
+      type: boolean
+secondary_entities:
+   - entity: switch
+    class: switch
+    name: Light Switch 1
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+        mapping:
+          - constraint: master
+            conditions:
+              - dps_val: false
+                invalid: true
+      - id: 11
+        name: countdown
+        type: integer
+      - id: 105
+        name: master
+        type: boolean
+        hidden: true
+  - entity: switch
+    class: switch
+    name: Light Switch 2
+    dps:
+      - id: 2
+        name: switch
+        type: boolean
+        mapping:
+          - constraint: master
+            conditions:
+              - dps_val: false
+                invalid: true
+      - id: 104
+        name: countdown
+        type: integer
+      - id: 105
+        name: master
+        type: boolean
+        hidden: true
+  - entity: number
+    name: Timer 1
+    icon: "mdi:timer"
+    category: config
+    dps:
+      - id: 11
+        type: integer
+        name: value
+        unit: s
+        range:
+          min: 0
+          max: 86400
+  - entity: number
+    name: Timer 2
+    icon: "mdi:timer"
+    category: config
+    dps:
+      - id: 104
+        type: integer
+        name: value
+        unit: s
+        range:
+          min: 0
+          max: 86400
