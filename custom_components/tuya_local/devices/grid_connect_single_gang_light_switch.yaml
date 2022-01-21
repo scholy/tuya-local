@@ -1,1 +1,31 @@
-test
+# Richard King
+# Auto-create switch and timer entities for Grid Connect Single Gang Light Switch
+
+name: Grid Connnect Double Gang Light Switch
+primary_entity:
+  entity: switch
+  category: config
+  name: Light Switch 1
+  class: switch
+  icon: "mdi:light-recessed"
+  dps:
+    - id: 1
+      name: switch
+      type: boolean
+    - id: 11
+      name: countdown
+      type: integer
+        
+secondary_entities:
+  - entity: number
+    name: Timer 1
+    icon: "mdi:timer"
+    category: config
+    dps:
+      - id: 11
+        type: integer
+        name: value
+        unit: s
+        range:
+          min: 0
+          max: 86400
